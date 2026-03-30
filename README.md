@@ -126,3 +126,8 @@ Adjust in `fall_detector.ino`:
 
 For someone who moves slowly, lowering `SMV_IMPACT_THRESHOLD` to 2.0g may help.
 For someone very active, raise `ORIENTATION_THRESHOLD` to 60°.
+
+## Source
+
+From a Claude chat - https://claude.ai/share/468e8846-4501-4214-9d09-8f51c4ce36d4
+
