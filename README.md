@@ -3,6 +3,8 @@
 Wearable fall detector for elderly family members.
 ESP32-S3 + MPU-6050 → Node.js alert server → SMS, push, email, Telegram.
 
+From a Claude chat - https://claude.ai/share/468e8846-4501-4214-9d09-8f51c4ce36d4
+
 ## Hardware
 
 | Part | ~Cost |
@@ -100,18 +102,6 @@ IDLE → FREEFALL → POST_IMPACT → [FALL CONFIRMED] → ALERTING
 False alarm cancel: press the button on the device within 30 seconds.
 A "false alarm" notification is then sent to all channels.
 
-## Neomem Integration
-
-In `server/index.js`, the `logEvent()` function appends to `recentEvents[]`.
-Pipe this to MongoDB or your Neomem namespace by replacing the TODO comment:
-
-```js
-function logEvent(type, event) {
-  const entry = { type, ...event, loggedAt: new Date().toISOString() }
-  await neomem.put(`/health/fall-events/${entry.loggedAt}`, entry)
-}
-```
-
 ## Tuning the Thresholds
 
 The defaults are conservative (favors catching falls over avoiding false alarms).
@@ -126,8 +116,4 @@ Adjust in `fall_detector.ino`:
 
 For someone who moves slowly, lowering `SMV_IMPACT_THRESHOLD` to 2.0g may help.
 For someone very active, raise `ORIENTATION_THRESHOLD` to 60°.
-
-## Source
-
-From a Claude chat - https://claude.ai/share/468e8846-4501-4214-9d09-8f51c4ce36d4
 
