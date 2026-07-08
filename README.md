@@ -1,6 +1,6 @@
 # Fall Detector — Open Source Wearable
 
-Note: this is from a chat with claude, untested!
+> Note: this is from a chat with claude, untested!
 
 Wearable fall detector for elderly family members.
 ESP32-S3 + MPU-6050 → Node.js alert server → SMS, push, email, Telegram.
